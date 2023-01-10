@@ -257,14 +257,13 @@ if __name__=='__main__':
             print(link)
             webbrowser.open(link)
         
-        elif 'where am I' in statement:
+        elif 'location' in statement:
             speak("you are in")
             url='http://ipinfo.io/json'
-            statement=statement.urlopen(url)
-            data=json.load(statement)
+            response=urlopen(url)
+            data= json.load(response)
             speak(data)
             print(data)
-            
 
         
 time.sleep(3)
